@@ -39,7 +39,7 @@
         "mocOnPremLocalGatewayTemplate": "[uri(deployment().properties.templateLink.uri, 'nestedtemplates/mock-onprem-local-gateway.json')]",
         "azureVirtualNetworkLocalGatewayTemplate": "[uri(deployment().properties.templateLink.uri, 'nestedtemplates/azure-network-local-gateway.json')]",
         "ResourceTags":{
-            "OwnerEmail": "snsandler@rockwellautomation.com",
+            "OwnerEmail": "[parameters('OwnerEmail')]",
              "Lifespan": "weeks"
         }
     },
