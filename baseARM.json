@@ -37,18 +37,19 @@
         "mocOnPremTemplate": "[uri(deployment().properties.templateLink.uri, 'nestedtemplates/mock-onprem-azuredeploy.json')]",
         "azureVirtualNetworkTemplate": "[uri(deployment().properties.templateLink.uri, 'nestedtemplates/azure-network-azuredeploy.json')]",
         "mocOnPremLocalGatewayTemplate": "[uri(deployment().properties.templateLink.uri, 'nestedtemplates/mock-onprem-local-gateway.json')]",
-        "azureVirtualNetworkLocalGatewayTemplate": "[uri(deployment().properties.templateLink.uri, 'nestedtemplates/azure-network-local-gateway.json')]"//,
-        // "ResourceTags":{
-        //     "OwnerEmail": "[parameters('OwnerEmail')]",
-        //      "Lifespan": "weeks"
-        // }
+        "azureVirtualNetworkLocalGatewayTemplate": "[uri(deployment().properties.templateLink.uri, 'nestedtemplates/azure-network-local-gateway.json')]",
+        "ResourceTags":{
+            "OwnerEmail": "snsandler@rockwellautomation.com",
+             "Lifespan": "weeks"
+        }
     },
     "resources": [
         {
             "type": "Microsoft.Resources/resourceGroups",
             "apiVersion": "2019-10-01",
             "name": "[parameters('mocOnPremResourceGroup')]",
-            "location": "[parameters('resourceGrouplocation')]"
+            "location": "[parameters('resourceGrouplocation')]",
+            "tags": "[variables('ResourceTags')]"
         },
         {
             "type": "Microsoft.Resources/resourceGroups",
