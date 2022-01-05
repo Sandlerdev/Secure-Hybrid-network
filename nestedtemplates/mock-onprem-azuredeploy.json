@@ -324,6 +324,7 @@
             "apiVersion": "2019-07-01",
             "name": "[variables('vmNameWindows')]",
             "location": "[parameters('location')]",
+            "tags":"[parameters('ResourceTags')]",
             "dependsOn": [
                 "[resourceId('Microsoft.Network/networkInterfaces', variables('nicNameWindows'))]"
             ],
@@ -347,7 +348,7 @@
                         "createOption": "FromImage"
                     }
                 },
-                "tags":"[parameters('ResourceTags')]",
+                
                 "networkProfile": {
                     "networkInterfaces": [
                         {
