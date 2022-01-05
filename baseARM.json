@@ -49,7 +49,7 @@
             "apiVersion": "2019-10-01",
             "name": "[parameters('mocOnPremResourceGroup')]",
             "location": "[parameters('resourceGrouplocation')]",
-            "tags": "[variables('ResourceTags')]"
+            //"tags": "[variables('ResourceTags')]"
         },
         {
             "type": "Microsoft.Resources/resourceGroups",
@@ -81,7 +81,9 @@
                     "location": {
                         "value": "[parameters('resourceGrouplocation')]"
                     },
-                    "ResourceTags": "[variables('ResourceTags')]"
+                    "ResourceTags": {
+                        "value": "[variables('ResourceTags')]"
+                    }
                 }
             }
         },
@@ -109,7 +111,9 @@
                     "location": {
                         "value": "[parameters('resourceGrouplocation')]"
                     },
-                    "ResourceTags": "[variables('ResourceTags')]"
+                    "ResourceTags": {
+                        "value":"[variables('ResourceTags')]"
+                    }
                 }
             }
         },
