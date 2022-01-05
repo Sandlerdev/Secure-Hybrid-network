@@ -25,13 +25,29 @@
         "resourceGrouplocation": {
             "type": "string",
             "defaultValue": "eastus"
+        },
+        "OwnerEmail": {
+            "type": "string",
+            "metadata": {
+                "description": "The email address of the owner of the Azure Resources being created."
+            }
         }
+        
     },
     "variables": {
         "mocOnPremTemplate": "[uri(deployment().properties.templateLink.uri, 'nestedtemplates/mock-onprem-azuredeploy.json')]",
         "azureVirtualNetworkTemplate": "[uri(deployment().properties.templateLink.uri, 'nestedtemplates/azure-network-azuredeploy.json')]",
         "mocOnPremLocalGatewayTemplate": "[uri(deployment().properties.templateLink.uri, 'nestedtemplates/mock-onprem-local-gateway.json')]",
-        "azureVirtualNetworkLocalGatewayTemplate": "[uri(deployment().properties.templateLink.uri, 'nestedtemplates/azure-network-local-gateway.json')]"
+        "azureVirtualNetworkLocalGatewayTemplate": "[uri(deployment().properties.templateLink.uri, 'nestedtemplates/azure-network-local-gateway.json')]",
+        "resourceTags":{
+            "OwnerEmail": "[parameters('OwnerEmail')]",
+            "Environment": "Sandbox",
+            "Lifespan": "weeks",
+            "BusinessUnit": "GSM - 535 - INFORMATION SOFTWARE",
+            "Capability": "Design and Develop Product Offering",
+            "CostCenter": "13065",
+            "DataClassification": "Confidential"
+        }
 
     },
     "resources": [
@@ -39,7 +55,8 @@
             "type": "Microsoft.Resources/resourceGroups",
             "apiVersion": "2019-10-01",
             "name": "[parameters('mocOnPremResourceGroup')]",
-            "location": "[parameters('resourceGrouplocation')]"
+            "location": "[parameters('resourceGrouplocation')]",
+            
         },
         {
             "type": "Microsoft.Resources/resourceGroups",
