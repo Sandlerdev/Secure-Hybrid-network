@@ -30,7 +30,8 @@
             "type": "object",
             "metadata": {
                 "description": "The tags to apply to the resources."
-            },
+            }
+        },
         "bastionHost": {
             "type": "object",
             "defaultValue": {
