@@ -80,7 +80,8 @@
                     },
                     "location": {
                         "value": "[parameters('resourceGrouplocation')]"
-                    }
+                    },
+                    "ResourceTags": "[variables('ResourceTags')]"
                 }
             }
         },
@@ -107,7 +108,8 @@
                     },
                     "location": {
                         "value": "[parameters('resourceGrouplocation')]"
-                    }
+                    },
+                    "ResourceTags": "[variables('ResourceTags')]"
                 }
             }
         },
