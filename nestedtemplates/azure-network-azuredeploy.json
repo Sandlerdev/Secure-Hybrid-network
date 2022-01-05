@@ -19,7 +19,12 @@
         "ResourceTags":{
             "type": "object",
             "metadata": {
-                "description": "The tags to apply to the resources."
+                "description": "The tags to apply to the resources.",
+                "defaultValue":{
+                    "OwnerEmail": "snsandler@rockwellautomation.com",
+                    "Lifespan": "weeks",
+                    "Environment": "sandbox"
+                }
             }
         },
         "vmSize": {
