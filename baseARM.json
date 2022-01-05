@@ -31,7 +31,7 @@
             "metadata": {
                 "description": "The email address of the owner of the virtual machines."
             }
-        },
+        }
     },
     "variables": {
         "mocOnPremTemplate": "[uri(deployment().properties.templateLink.uri, 'nestedtemplates/mock-onprem-azuredeploy.json')]",
