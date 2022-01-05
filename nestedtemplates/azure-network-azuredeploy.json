@@ -16,9 +16,15 @@
                 "description": "The count of Windows virtual machines to create."
             }
         },
+        "ResourceTags":{
+            "type": "object",
+            "metadata": {
+                "description": "The tags to apply to the resources."
+            }
+        },
         "vmSize": {
             "type": "string",
-            "defaultValue": "Standard_A1_v2"
+            "defaultValue": "Standard_DS3_v2"
         },
         "configureSitetosite": {
             "type": "bool",
@@ -773,6 +779,7 @@
             "properties": {
                 "hardwareProfile": {
                     "vmSize": "[parameters('vmSize')]"
+
                 },
                 "osProfile": {
                     "computerName": "[concat(variables('vmNameWeb'), copyIndex())]",
@@ -790,6 +797,7 @@
                         "createOption": "FromImage"
                     }
                 },
+                "tags":"[parameters('ResourceTags')]",
                 "networkProfile": {
                     "networkInterfaces": [
                         {

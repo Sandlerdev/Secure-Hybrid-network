@@ -26,6 +26,11 @@
                 "publicIPAddressName": "pip-onprem-vpn-gateway"
             }
         },
+        "ResourceTags":{
+            "type": "object",
+            "metadata": {
+                "description": "The tags to apply to the resources."
+            },
         "bastionHost": {
             "type": "object",
             "defaultValue": {
@@ -38,7 +43,7 @@
         },
         "vmSize": {
             "type": "string",
-            "defaultValue": "Standard_A1_v2"
+            "defaultValue": "Standard_DS3_v2"
         },
         "configureSitetosite": {
             "type": "bool",
@@ -336,6 +341,7 @@
                         "createOption": "FromImage"
                     }
                 },
+                "tags":"[parameters('ResourceTags')]",
                 "networkProfile": {
                     "networkInterfaces": [
                         {
