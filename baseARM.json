@@ -37,12 +37,11 @@
         "mocOnPremTemplate": "[uri(deployment().properties.templateLink.uri, 'nestedtemplates/mock-onprem-azuredeploy.json')]",
         "azureVirtualNetworkTemplate": "[uri(deployment().properties.templateLink.uri, 'nestedtemplates/azure-network-azuredeploy.json')]",
         "mocOnPremLocalGatewayTemplate": "[uri(deployment().properties.templateLink.uri, 'nestedtemplates/mock-onprem-local-gateway.json')]",
-        "azureVirtualNetworkLocalGatewayTemplate": "[uri(deployment().properties.templateLink.uri, 'nestedtemplates/azure-network-local-gateway.json')]",
-        "ResourceTags":{
-            "OwnerEmail": "[parameters('OwnerEmail')]",
-             "Lifespan": "weeks"
-        }
-
+        "azureVirtualNetworkLocalGatewayTemplate": "[uri(deployment().properties.templateLink.uri, 'nestedtemplates/azure-network-local-gateway.json')]"//,
+        // "ResourceTags":{
+        //     "OwnerEmail": "[parameters('OwnerEmail')]",
+        //      "Lifespan": "weeks"
+        // }
     },
     "resources": [
         {
